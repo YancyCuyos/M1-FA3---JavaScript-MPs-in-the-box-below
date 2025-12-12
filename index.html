@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP1 & MP5 by Earl Yancy Cuyos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- MP1 SECTION -->
+    <section>
+        <h1>MP1: Replace All Spaces</h1>
+
+        <input type="text" id="mp1Input" placeholder="Enter text">
+        <button id="mp1Btn">Replace All</button>
+
+        <div id="mp1Output">Output will appear here...</div>
+    </section>
+
+    <hr>
+
+    <!-- MP5 SECTION -->
+    <section>
+        <h1>MP5: EmailCheck</h1>
+
+        <input type="text" id="mp5Input" placeholder="Enter your email">
+        <button id="mp5Btn">Check Email</button>
+
+        <div id="mp5Output">Output will appear here...</div>
+    </section>
+
+    <script>
+        // MP1 Script – Replace all spaces with hyphens
+        document.getElementById("mp1Btn").addEventListener("click", function() {
+            let text = document.getElementById("mp1Input").value;
+            let result = text.replace(/ /g, "");
+            document.getElementById("mp1Output").textContent = result;
+        });
+
+        // MP5 Script – Check valid email
+        document.getElementById("mp5Btn").addEventListener("click", function() {
+            let email = document.getElementById("mp5Input").value;
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            document.getElementById("mp5Output").textContent =
+                pattern.test(email)
+                ? "✔ Valid email format"
+                : "✘ Invalid email format";
+        });
+    </script>
+
+</body>
+</html>
